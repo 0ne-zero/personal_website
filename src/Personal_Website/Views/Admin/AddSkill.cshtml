@@ -1,0 +1,38 @@
+﻿@model Personal_Website.Models.Profile
+@{
+    Layout = "AdminLayout";
+}
+<div class="page-wrapper bg-dark p-t-100 p-b-50">
+    <div class="wrapper wrapper--w900">
+        <div class="card card-6">
+            <div class="card-heading">
+                <h2 class="title">Add Skill ...</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/admin/create?t=skill">
+
+                    <div class="form-row">
+                        <div class="name">Skill Name</div>
+                        <div class="value">
+                            <input class="input--style-6" type="text" name="name" placeholder="Python">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Ability Rate</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-6" type="number" name="ability_rate" placeholder="80">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <button class="btn btn--radius-2 btn--green" type="submit">Add Skill</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

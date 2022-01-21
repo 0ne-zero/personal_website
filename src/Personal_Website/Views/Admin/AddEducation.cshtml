@@ -1,0 +1,47 @@
+﻿@model Personal_Website.Models.Profile
+@{
+    Layout = "AdminLayout";
+}
+<div class="page-wrapper bg-dark p-t-100 p-b-50">
+    <div class="wrapper wrapper--w900">
+        <div class="card card-6">
+            <div class="card-heading">
+                <h2 class="title">Add Education ...</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/admin/create?t=education">
+
+                    <div class="form-row">
+                        <div class="name">University</div>
+                        <div class="value">
+                            <input class="input--style-6" type="text" name="university" placeholder="MIT">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Time Period</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-6" type="text" name="time_period" placeholder="2018-2020">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Description</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-6" type="text" name="description" placeholder="Something about your education...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <button class="btn btn--radius-2 btn--green" type="submit">Add Education</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

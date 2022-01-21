@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Personal_Website.Models.Admin>
+@{
+    ViewData["Title"] = "Admins list";
+    Layout = "AdminLayout";
+}
+<br />
+<h1 style="color:gray">
+    Admins list
+</h1>
+<br />
+<p>
+    <a class="btn btn-success btn-sm" type="button" href="/admin/create?t=admin">Add Admin</a>
+</p>
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Commnads</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Username
+                </td>
+                <td>@item.Password</td>
+                <td>
+                    <a type="button" class="btn btn-danger btn-sm" href="/admin/delete?t=admin&id=@item.ID&callback=/admin/admins">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

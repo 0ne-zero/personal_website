@@ -1,0 +1,176 @@
+﻿@model Personal_Website.Models.All_Information
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@Model.Profile.Name Personal Website</title>
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <link rel="shortcut icon" href="~/favicon.ico">
+
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/icomoon.css">
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <script src="~/js/modernizr-2.6.2.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body style="background-image: url(/images/bg_img.jpg);">
+    <div id='all-elements'>
+
+        <div id="fh5co-main">
+            <div class="fh5co-tab-wrap">
+                <ul class="fh5co-tab-menu">
+                    <li class="active"><a href="#" data-tab="1"><span class="icon icon-glass"></span><span class="menu-text">Profile</span></a></li>
+                    <li><a href="#" data-tab="2"><span class="icon icon-graduation-cap"></span><span class="menu-text">Education</span></a></li>
+                    <li><a href="#" data-tab="3"><span class="icon icon-black-tie"></span><span class="menu-text">Experience</span></a></li>
+                    <li><a href="#" data-tab="4" data-pie="yes"><span class="icon icon-fighter-jet"></span><span class="menu-text">Skills</span></a></li>
+                </ul>
+                <div class="fh5co-tab-content active" data-content="1">
+                    <div class="fh5co-content-inner text-center">
+                        <div class="row row-bottom-padded-sm">
+                            <div class="col-md-12">
+                                <figure>
+                                    <img src="@Model.Profile.Image" alt="Picture">
+                                </figure>
+                                <h1>@Model.Profile.Name.ToString()</h1>
+                                <p>@Model.Profile.Description</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 fh5co-counter">
+                                <div class="fh5co-number fh5co-left">@Model.Profile.Work_Experience</div>
+                                <div class="fh5co-text">
+                                    <h3 class="border-bottom">Years of experience in Web Development</h3>
+                                    @*              <p>Far far away, behind the word mountains, far from the countries.</p>*@
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="fh5co-social">
+                            <li><a href="mailto:@Model.Profile.Email"><i class="icon-envelope"></i></a></li>
+                            <li><a href="@Model.Profile.Twitter"><i class="icon-twitter"></i></a></li>
+                            <li><a href="@Model.Profile.Instagram"><i class="icon-instagram"></i></a></li>
+                            <li><a href="@Model.Profile.Linkedin"><i class="icon-linkedin"></i></a></li>
+                            <li>
+                                <a id='download-resume' href="/Home/Downloadpdf">
+                                    <i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-arrow-down" viewBox="0 0 16 16">
+                                            <path d="M8.5 6.5a.5.5 0 0 0-1 0v3.793L6.354 9.146a.5.5 0 1 0-.708.708l2 2a.5.5 0 0 0 .708 0l2-2a.5.5 0 0 0-.708-.708L8.5 10.293V6.5z" />
+                                            <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z" />
+                                        </svg>
+                                    </i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="fh5co-tab-content" data-content="2">
+                    <div class="fh5co-content-inner">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>I have some funny education ...</p>
+                                @foreach (var item in @Model.Education)
+                                {
+                                    <div class="fh5co-feature">
+                                        <div class="fh5co-icon">
+                                            <i class="icon-graduation-cap"></i>
+                                        </div>
+                                        <div class="fh5co-text">
+                                            <h2>@item.University</h2>
+                                            <h3>@item.Time_Period</h3>
+                                            <p>@item.Description</p>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fh5co-tab-content" data-content="3">
+                    <div class="fh5co-content-inner">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <p>I have the privilege to work with these cool companies ...</p>
+
+                                @foreach (var item in @Model.Experience)
+                                {
+                                    <div class="fh5co-feature">
+                                        <div class="fh5co-icon">
+                                            <i class="icon-black-tie"></i>
+                                        </div>
+                                        <div class="fh5co-text">
+                                            <h2>@item.Company_Name</h2>
+                                            <h3>@item.Time_Period</h3>
+                                            <p>@item.Description</p>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fh5co-tab-content" data-content="4">
+                    <div class="fh5co-content-inner">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>These are some of my skills ...
+                            </div>
+
+                            @foreach (var item in @Model.Skill)
+                            {
+                                <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+                                    <div class="chart" data-percent="@item.Ability_Rate"><span><strong>@item.Name</strong>@item.Ability_Rate%</span></div>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer id="fh5co-footer">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center">
+                        <small>
+                            &copy; 2016 Personal Free HTML5 Template. All Rights Reserved. <span class="fh5co-author">
+                                Designed by <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a>
+                            </span>
+                        </small>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script src="~/js/jquery.min.js"></script>
+        <script src="~/js/jquery.easing.1.3.js"></script>
+        <script src="~/js/bootstrap.min.js"></script>
+        <script src="~/js/jquery.waypoints.min.js"></script>
+        <script src="~/js/jquery.easypiechart.min.js"></script>
+        <script src="~/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>
+
+<script>
+
+    function downloadResume(){
+    var element = document.getElementById('all-elements').innerHTML;
+    html2pdf(element);
+    }
+</script>

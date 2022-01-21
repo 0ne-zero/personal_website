@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Personal_Website.Models.Education>
+@{
+    ViewData["Title"] = "Educations list";
+    Layout = "AdminLayout";
+}
+<br />
+<h1 style="color:gray">
+    Educations list
+</h1>
+<br />
+<p>
+    <a class="btn btn-success btn-sm" type="button" href="/admin/create?t=education">Add Education</a>
+</p>
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>University</th>
+            <th>Time Period</th>
+            <th>Description</th>
+            <th>Commnads</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.University
+                </td>
+                <td>@item.Time_Period</td>
+                <td>@item.Description</td>
+                <td>
+                    <a type="button" class="btn btn-danger btn-sm" href="/admin/delete?t=education&id=@item.Id&callback=/admin/educations">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

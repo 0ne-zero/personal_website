@@ -1,0 +1,96 @@
+﻿@model Personal_Website.Models.Profile
+@{
+    Layout = "AdminLayout";
+}
+<div class="page-wrapper bg-dark p-t-100 p-b-50">
+    <div class="wrapper wrapper--w900">
+        <div class="card card-6">
+            <div class="card-heading">
+                <h2 class="title">Profile Information</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/admin/saveprofile" enctype="multipart/form-data">
+                    <div class="form-row">
+                        <div class="name">Full name</div>
+                        <div class="value">
+                            <input class="input--style-6" type="text" name="name" value="@Model.Name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Email address</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-6" type="email" name="email" placeholder="example@email.com" value=@Model.Email>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Instagram</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-6" type="text" name="instagram" placeholder="https://www.instagram.com/YOUR_USERNAME" value=@Model.Instagram>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Twitter</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-6" type="text" name="twitter" placeholder="https://twitter.com/YOUR_USERNAME" value=@Model.Twitter>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Linkedin</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-6" type="text" name="linkedin" placeholder="https://linkedin.com/in/YOUR_USERNAME" value=@Model.Linkedin>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Work Experience</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-6" type="number" name="work_experience" placeholder="0" value=@Model.Work_Experience>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Description</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <textarea class="textarea--style-6" name="description" placeholder="Description about you...">@Model.Description</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Upload Image</div>
+                        <div class="value">
+                            <div class="input-group js-input-file">
+                                <input type="file" name="file_image" id="file_image">
+                            </div>
+                            <div class="label--desc">Upload your Image</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Upload Resume</div>
+                        <div class="value">
+                            <div class="input-group js-input-file">
+                                <input type="file" accept="application/pdf" name="file_resume" id="file_resume">
+                            </div>
+                            <div class="label--desc">Upload your resume as pdf format</div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+
+                        <button class="btn btn--radius-2 btn--green" type="submit">Save Information</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

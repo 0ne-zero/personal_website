@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Personal_Website.Models.Skill>
+@{
+    ViewData["Title"] = "Skills list";
+    Layout = "AdminLayout";
+}
+<br />
+<h1 style="color:gray">
+    Skills list
+</h1>
+<br />
+<p>
+    <a class="btn btn-success btn-sm" type="button" href="/admin/create?t=skill">Add Skill</a>
+</p>
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>Skill Name</th>
+            <th>Ability Rate</th>
+            <th>Commnads</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>@item.Ability_Rate</td>
+                <td>
+                    <a type="button" class="btn btn-danger btn-sm" href="/admin/delete?t=skill&id=@item.Id&callback=/admin/skills">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
