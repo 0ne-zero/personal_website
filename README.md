@@ -4,7 +4,7 @@
 - This project is a website for resume or personal introduction, with an admin panel for managing contents
 
 ## Technologies Used
-- .NET 6
+- C# (.NET 6)
 - JavaScript
 - HTML, CSS
 
