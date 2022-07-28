@@ -1,2 +1,3 @@
 /src/Personal_Website/wwwroot/** linguist-vendored
 /src/Personal_Website/Views/** linguist-vendored
+*.html linguist-detectable=false
