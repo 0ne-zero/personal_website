@@ -2,6 +2,7 @@
 
 ## General Information
 - This project is a website for resume or personal introduction, with an admin panel for managing contents
+- I don't have any credit for front-end of website
 
 ## Technologies Used
 - C# (.NET 6)
