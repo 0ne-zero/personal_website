@@ -5,6 +5,7 @@
 
 ## Technologies Used
 - C# (.NET 6)
+- SQLite
 - JavaScript
 - HTML, CSS
 
