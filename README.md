@@ -8,8 +8,8 @@
 * [Contact](#contact)
 
 ## General Information
-- This project is a website for resume or personal introduction, with an admin panel for managing contents
-- I don't have any credit for front-end of the website
+- This project is a website for resume or personal introduction, with an admin panel to manage the contents
+- I don't have any credit for front-end of the website, All credits donates to [freehtml5](https://freehtml5.co/) team.
 
 ## Technologies Used
 - C# (.NET 6)
