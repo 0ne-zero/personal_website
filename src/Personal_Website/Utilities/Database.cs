@@ -7,7 +7,7 @@ namespace Personal_Website.Utilities
 {
     public sealed class Database
     {
-        static string db_path = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName.ToString() + "\\db\\database.db";
+        static string db_path = Path.Join(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName.ToString(),"db","database.db");
 
         string connection_string = $"Data Source={db_path}";
 
